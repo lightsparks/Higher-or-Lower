@@ -6,14 +6,106 @@
     <!--meta name="keywords" content=""-->
     <meta name="author" content="LightSparks">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" type="text/css"/>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Higher or lower: Cobra Kai Card Game</title>
 </head>
 <body>
 
-<div id=app>
-    
+<div id="app">
+
+    <h1 class="title">Higher or lower?</h1>
+
+    <div class="buttonWrap" v-if="showButton">
+        <button name="higher" class="button higher" @click="choice('>')" >Higher</button>
+        <button name="lower" class="button lower" @click="choice('<')" >Lower</button>
+        <!--<button name="lower" class="button lower" @click="go" >Just go</button>-->
+    </div>
+
+    <div class="break" v-if="gameOver">
+        <br><br>
+    </div>
+
+    <img alt="stack" class="deck card" src="./images/blue_cobrakai.png" />
+    <img alt="graveyard" class="deck2 card" v-for="image in deck2" :src="'./images/' + image + '.png'" :key="image" />
+
+    <div class="game-over" v-if="gameOver">
+        <h2 id="game-over"><br>game Over!!</h2>
+        <button id="restart" @click="startNewGame">start new game</button>
+    </div>
+
 </div>
+
+<script src="vue.js"></script>
 
 </body>
 </html>
+
+
+<!--h1 class="title">Higher or lower?</h1>
+
+<div class="cardsWrap">
+    <div class="stack">
+        <img alt="stack" class="stack" src="./images/blue_cobrakai.png"/>
+        <img alt="currentcard" class="activeSlot" :src="customCard(currentcard)"/>
+    </div>
+    <div class="buttonWrap">
+        <button name="higher" class="button higher">Higher</button>
+        <button name="lower" class="button lower">Lower</button>
+    </div>
+</div>
+
+<div-- class="playedWrap">
+    <ul class="playedCards">
+        <li class="playedCards">
+            <img class="playedCards" src="./images/10C.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="second-to-last" src="./images/2S.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="third-to-last" src="./images/KH.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="playedCards" src="./images/7D.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="playedCards" src="./images/10C.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="second-to-last" src="./images/2S.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="third-to-last" src="./images/KH.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="playedCards" src="./images/7D.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="playedCards" src="./images/10C.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="second-to-last" src="./images/2S.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="third-to-last" src="./images/KH.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="playedCards" src="./images/7D.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="playedCards" src="./images/10C.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="second-to-last" src="./images/2S.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="third-to-last" src="./images/KH.png"/>
+        </li>
+        <li class="playedCards">
+            <img class="playedCards" src="./images/7D.png"/>
+        </li>
+    </ul>
+</div-->

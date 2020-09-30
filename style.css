@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("./images/bg-cobrakai-crop.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-left: 5%;
+    height: 100vh;
+    width: 90%;
+    font-family: 'Seaweed Script', cursive;
+}
+
+h1.title {
+    margin: 10px;
+    text-align: center;
+    font-size: 80pt;
+    color: yellow;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+div.buttonWrap {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+div.buttonWrap > button, .game-over > button {
+
+    padding: 10px 35px;
+    font-family: 'Seaweed Script', cursive;
+    font-size: 35px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+    outline: none;
+    color: yellow;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin: 5px;
+}
+
+div.buttonWrap > button:hover {
+    background-color: #3e8e41
+}
+
+div.buttonWrap > button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+img.card {
+    height: 240px;
+}
+
+div.deckwrap {
+    display: flex;
+    margin: 20px;
+}
+
+div.deckwrap > .deck, .playedCard {
+    height: 240px;
+    border-radius: 12px;
+    margin: 5px;
+}
+
+div.playedWrap {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+div.playedWrap > img {
+    height: 240px;
+}
+
+ul.playedCards {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    list-style-type: none;
+}
+
+.game-over {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5); /*dim background*/
+    font-family: 'Permanent Marker', cursive;
+    font-size: 100pt;
+    text-align: center;
+    align-content: center;
+    color: darkred;
+    text-shadow: -2px -2px 2px #ffffff, 20px 20px 10px #000000;
+}
