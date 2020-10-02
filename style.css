@@ -26,9 +26,10 @@ h1.title {
 }
 
 div.buttonWrap {
-    margin: 50px;
     display: flex;
     justify-content: center;
+    padding: 50px;
+    height: 188px;
 }
 
 div.buttonWrap > button, .game-over > button {
@@ -47,6 +48,7 @@ div.buttonWrap > button, .game-over > button {
     border-radius: 15px;
     box-shadow: 0 9px #999;
     margin: 5px;
+    height: 78px;
 }
 
 div.buttonWrap > button:hover {

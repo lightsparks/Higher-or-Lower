@@ -18,22 +18,18 @@
 
     <h1 class="title">Higher or lower?</h1>
 
-    <div class="buttonWrap" v-if="showButton">
+    <div class="buttonWrap">
         <button name="higher" class="button higher" @click="choice('>')" >Higher</button>
         <button name="lower" class="button lower" @click="choice('<')" >Lower</button>
         <!--<button name="lower" class="button lower" @click="go" >Just go</button>-->
-    </div>
-
-    <div class="break" v-if="gameOver">
-        <br><br>
     </div>
 
     <img alt="stack" class="deck card" src="./images/blue_cobrakai.png" />
     <img alt="graveyard" class="deck2 card" v-for="image in deck2" :src="'./images/' + image + '.png'" :key="image" />
 
     <div class="game-over" v-if="gameOver">
-        <h2 id="game-over"><br>game Over!!</h2>
-        <button id="restart" @click="startNewGame">start new game</button>
+        <h2 id="game-over"><br>Game Over!!</h2>
+        <button id="restart" @click="startNewGame" v-if="showButton">start new game</button>
     </div>
 
 </div>

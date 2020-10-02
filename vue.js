@@ -19,7 +19,7 @@ const app = new Vue({
             14: 1,
         },
         gameOver: false,
-        showButton: true,
+        showButton: false,
     },
 
     mounted: function () {
@@ -29,7 +29,7 @@ const app = new Vue({
     methods: {
         startNewGame: function () {
             this.gameOver = false;
-            this.showButton = true;
+            this.showButton = false;
             this.deck = [];
             this.deck2 = [];
             const suits = ['D', 'C', 'H', 'S'];
@@ -61,8 +61,8 @@ const app = new Vue({
 
             if (result) {
                 console.log("You iz ded, muthafuckaaaaa");
-                this.gameOver = true;
-                this.showButton = false;
+                setTimeout(() => {  this.gameOver = true; }, 250);
+                setTimeout(() => {  this.showButton = true; }, 1500);
             }
         },
         go: function(){
